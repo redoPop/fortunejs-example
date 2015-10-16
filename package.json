@@ -1,0 +1,17 @@
+{
+  "name": "fortunejs-example",
+  "version": "0.0.0",
+  "description": "Example JSON API prototype using Fortune.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/redoPop/fortunejs-example.git"
+  },
+  "dependencies": {
+    "fortune": "^1.3.13",
+    "fortune-json-api": "^1.1.7",
+    "fortune-nedb": "^1.0.2"
+  },
+  "scripts": {
+    "start": "babel-node server.js"
+  }
+}

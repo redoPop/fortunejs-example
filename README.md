@@ -1,0 +1,61 @@
+# Example JSON API prototype using Fortune.js
+
+[Fortune.js](http://fortunejs.com/) is handy for prototyping [JSON API](http://jsonapi.org/) formatted APIs. This example repository extends [Fortune's Getting Started guide](http://fortunejs.com/getting-started/) to demonstrate a simple API prototype using Fortune's JSON API serializer coupled with its [NeDB](https://github.com/louischatriot/nedb) adapter for file-based persistence.
+
+I find this combination especially handy: the flat files used by NeDB (found in the `db` directory of this repo) are easy to parse and edit manually, and with just a few lines of code Fortune.js can serialize their contents as a JSON API.
+
+## Installation
+
+Simply clone this repo and:
+
+```
+$ npm install
+```
+
+You'll also need [Babel](http://babeljs.io/) to run the server:
+
+```
+$ npm install -g babel
+```
+
+## Running the server
+
+```
+$ babel-node server.js
+```
+
+Per the console, the API is now available on port 1337 of your localhost.
+
+## Example requests
+
+To keep things simple, I've stuck with the original example presented in the Fortune.js Getting Started guide: a basic API for a Twitter-like service consisting of only `/users` and `/posts`. You'll find the schema definition in `store.js`, along with some expository comments.
+
+I've intentionally avoided transformations and other techniques introduced in Fortune's guide to focus this example on JSON API serialization of file-persisted data.
+
+To the same end, I've also added some seed data which you'll find in the `db` directory of this repository (`db/post.db`, `db/user.db`).
+
+### Retrieve all posts
+
+```
+$ curl -X "GET" "http://localhost:1337/posts"
+```
+
+### Create a post
+
+```
+$ curl -X "POST" "http://localhost:1337/posts" \
+       -H "Content-Type: application/vnd.api+json" \
+       -d $'{
+              "data": {
+                "type": "posts",
+                "attributes": {
+                  "message": "My name is Catbug!"
+                },
+                "relationships": {
+                  "author": {
+                    "data": {"id": 5, "type": "users"}
+                  }
+                }
+              }
+            }'
+```
