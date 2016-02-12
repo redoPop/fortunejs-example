@@ -6,25 +6,17 @@ I find this combination especially handy: the flat files used by NeDB (found in 
 
 ## Installation
 
-Simply clone this repo and:
-
-```
-$ npm install
-```
-
-You'll also need [Babel](http://babeljs.io/) to run the server:
-
-```
-$ npm install -g babel
-```
+* `git clone git@github.com:redoPop/fortunejs-example.git`
+* `cd fortunejs-example`
+* `npm install`
 
 ## Running the server
 
 ```
-$ babel-node server.js
+node_modules/.bin/babel-node server.js
 ```
 
-Per the console, the API is now available on port 1337 of your localhost.
+The JSON API is now available on port 1337 of your localhost.
 
 ## Example requests
 
@@ -37,13 +29,13 @@ To the same end, I've also added some seed data which you'll find in the `db` di
 ### Retrieve all posts
 
 ```
-$ curl -X "GET" "http://localhost:1337/posts"
+curl -X "GET" "http://localhost:1337/posts"
 ```
 
 ### Create a post
 
 ```
-$ curl -X "POST" "http://localhost:1337/posts" \
+curl -X "POST" "http://localhost:1337/posts" \
        -H "Content-Type: application/vnd.api+json" \
        -d $'{
               "data": {
