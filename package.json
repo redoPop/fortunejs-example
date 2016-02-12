@@ -6,12 +6,14 @@
     "type": "git",
     "url": "https://github.com/redoPop/fortunejs-example.git"
   },
+  "license": "WTFPL",
   "dependencies": {
-    "fortune": "^1.3.13",
-    "fortune-json-api": "^1.1.7",
-    "fortune-nedb": "^1.0.2"
+    "fortune": "^3.0.3",
+    "fortune-json-api": "^2.0.1",
+    "fortune-nedb": "^1.1.2"
   },
-  "scripts": {
-    "start": "babel-node server.js"
+  "devDependencies": {
+    "babel-cli": "^6.5.1",
+    "babel-preset-es2015": "^6.5.0"
   }
 }

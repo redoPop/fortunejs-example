@@ -1,40 +1,37 @@
 import fortune from 'fortune';
-import jsonApi from 'fortune-json-api';
 import nedbAdapter from 'fortune-nedb';
 import path from 'path';
 
-const store = fortune.create({
-  adapter: {
-    type: nedbAdapter,
-    options: {dbPath: path.join(__dirname, 'db')}
+const recordTypes = {
+  user: {
+    name: { type: String },
+
+    // Following and followers are inversely related (many-to-many)
+    following: { link: 'user', inverse: 'followers', isArray: true },
+    followers: { link: 'user', inverse: 'following', isArray: true },
+
+    // Many-to-one relationship of user posts to post author
+    posts: { link: 'post', inverse: 'author', isArray: true },
   },
 
-  serializers: [{
-    type: jsonApi,
-    options: {prefix: ''}
-  }]
-});
+  post: {
+    message: { type: String },
 
-store.defineType('user', {
-  name: {type: String},
+    // One-to-many / many-to-one relationship of posts to replies
+    'in-reply-to': { link: 'post', inverse: 'replies' },
+    replies: { link: 'post', inverse: 'in-reply-to', isArray: true },
 
-  // Following and followers are inversely related (many-to-many)
-  following: {link: 'user', inverse: 'followers', isArray: true},
-  followers: {link: 'user', inverse: 'following', isArray: true},
+    // One-to-many relationship of post author to user posts
+    author: { link: 'user', inverse: 'posts' },
+  },
+};
 
-  // Many-to-one relationship of user posts to post author
-  posts: {link: 'post', inverse: 'author', isArray: true}
-});
+const adapterOptions = {
+  dbPath: path.join(__dirname, 'db'),
+};
 
-store.defineType('post', {
-  message: {type: String},
-
-  // One-to-many / many-to-one relationship of posts to replies
-  'in-reply-to': {link: 'post', inverse: 'replies'},
-  replies: {link: 'post', inverse: 'in-reply-to', isArray: true},
-
-  // One-to-many relationship of post author to user posts
-  author: {link: 'user', inverse: 'posts'}
+const store = fortune(recordTypes, {
+  adapter: [nedbAdapter, adapterOptions],
 });
 
 module.exports = store;
