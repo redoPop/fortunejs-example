@@ -8,12 +8,12 @@
   },
   "license": "WTFPL",
   "dependencies": {
-    "fortune": "^3.0.3",
-    "fortune-json-api": "^2.0.1",
-    "fortune-nedb": "^1.1.2"
+    "fortune": "^4.0.5",
+    "fortune-json-api": "^2.0.8",
+    "fortune-nedb": "^1.1.3"
   },
   "devDependencies": {
-    "babel-cli": "^6.5.1",
-    "babel-preset-es2015": "^6.5.0"
+    "babel-cli": "^6.10.1",
+    "babel-preset-es2015": "^6.9.0"
   }
 }
