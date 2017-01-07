@@ -13,7 +13,7 @@ I find this combination especially handy: the flat files used by NeDB (found in 
 ## Running the server
 
 ```
-node_modules/.bin/babel-node server.js
+npm start
 ```
 
 The JSON API is now available on port 1337 of your localhost.
