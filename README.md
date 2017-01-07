@@ -1,6 +1,6 @@
 # Example JSON API prototype using Fortune.js
 
-[Fortune.js](http://fortunejs.com/) is handy for prototyping [JSON API](http://jsonapi.org/) formatted APIs. This example repository extends [Fortune's Getting Started guide](http://fortunejs.com/getting-started/) to demonstrate a simple API prototype using Fortune's JSON API serializer coupled with its [NeDB](https://github.com/louischatriot/nedb) adapter for file-based persistence.
+[Fortune.js](http://fortune.js.org) is handy for prototyping [JSON API](http://jsonapi.org/) formatted APIs. This example repository extends [Fortune's Getting Started guide](http://fortune.js.org/guide/) to demonstrate a simple API prototype using Fortune's JSON API serializer coupled with its [NeDB](https://github.com/louischatriot/nedb) adapter for file-based persistence.
 
 I find this combination especially handy: the flat files used by NeDB (found in the `db` directory of this repo) are easy to parse and edit manually, and with just a few lines of code Fortune.js can serialize their contents as a JSON API.
 
@@ -36,18 +36,18 @@ curl -X "GET" "http://localhost:1337/posts"
 
 ```
 curl -X "POST" "http://localhost:1337/posts" \
-       -H "Content-Type: application/vnd.api+json" \
-       -d $'{
-              "data": {
-                "type": "posts",
-                "attributes": {
-                  "message": "My name is Catbug!"
-                },
-                "relationships": {
-                  "author": {
-                    "data": {"id": 5, "type": "users"}
-                  }
+     -H "Content-Type: application/vnd.api+json" \
+     -d $'{
+            "data": {
+              "type": "posts",
+              "attributes": {
+                "message": "My name is Catbug!"
+              },
+              "relationships": {
+                "author": {
+                  "data": {"id": 5, "type": "users"}
                 }
               }
-            }'
+            }
+          }'
 ```
