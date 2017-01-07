@@ -1,5 +1,4 @@
 import http from 'http';
-import fortune from 'fortune';
 import fortuneHttp from 'fortune-http';
 import jsonApiSerializer from 'fortune-json-api';
 import store from './store';

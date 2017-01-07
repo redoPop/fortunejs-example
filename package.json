@@ -8,6 +8,8 @@
   },
   "license": "WTFPL",
   "scripts": {
+    "pretest": "eslint *.js",
+    "test": "echo \u2665",
     "start": "babel-node server.js"
   },
   "dependencies": {
@@ -17,5 +19,10 @@
     "fortune-http": "^1.0.3",
     "fortune-json-api": "^2.1.0",
     "fortune-nedb": "^1.1.4"
+  },
+  "devDependencies": {
+    "eslint": "^3.13.0",
+    "eslint-config-airbnb-base": "^11.0.0",
+    "eslint-plugin-import": "^2.2.0"
   }
 }
