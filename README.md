@@ -20,7 +20,7 @@ The JSON API is now available on port 1337 of your localhost.
 
 ## Example requests
 
-To keep things simple, I've stuck with the original example presented in the Fortune.js Getting Started guide: a basic API for a Twitter-like service consisting of only `/users` and `/posts`. You'll find the schema definition in `store.js`, along with some expository comments.
+To keep things simple, I've stuck with the original example presented in the Fortune.js Getting Started guide: a basic API for a Twitter-like service consisting of only `/users` and `/posts`. You'll find the schema definition in `lib/store.js`, along with some expository comments.
 
 I've intentionally avoided transformations and other techniques introduced in Fortune's guide to focus this example on JSON API serialization of file-persisted data.
 
