@@ -1,7 +1,8 @@
 {
   "name": "fortunejs-example",
   "version": "0.0.0",
-  "description": "Example JSON API prototype using Fortune.js.",
+  "description": "Example JSON:API prototype using Fortune.js.",
+  "private": true,
   "repository": {
     "type": "git",
     "url": "https://github.com/redoPop/fortunejs-example.git"
@@ -10,19 +11,17 @@
   "scripts": {
     "pretest": "eslint lib/*.js",
     "test": "echo \u2665",
-    "start": "babel-node lib/server.js"
+    "start": "node lib/server.js"
   },
   "dependencies": {
-    "babel-cli": "^6.24.0",
-    "babel-preset-es2015": "^6.24.0",
-    "fortune": "^5.1.0",
-    "fortune-http": "^1.0.5",
-    "fortune-json-api": "^2.1.1",
-    "fortune-nedb": "^1.1.5"
+    "fortune": "^5.5.0",
+    "fortune-http": "^1.2.0",
+    "fortune-json-api": "^2.2.0",
+    "fortune-nedb": "^1.1.0"
   },
   "devDependencies": {
-    "eslint": "^3.19.0",
-    "eslint-config-airbnb-base": "^11.1.3",
-    "eslint-plugin-import": "^2.2.0"
+    "eslint": "^6.0.0",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-plugin-import": "^2.18.0"
   }
 }
