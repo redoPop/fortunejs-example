@@ -8,6 +8,7 @@
     "url": "https://github.com/redoPop/fortunejs-example.git"
   },
   "license": "WTFPL",
+  "type": "module",
   "scripts": {
     "pretest": "eslint lib/*.js",
     "test": "echo \u2665",
