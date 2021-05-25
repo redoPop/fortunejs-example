@@ -6,8 +6,8 @@
   "type": "module",
   "scripts": {
     "pretest": "eslint lib/*.js",
-    "test": "echo ♥",
-    "start": "node lib/server.js"
+    "test": "mocha test",
+    "start": "node lib/server"
   },
   "dependencies": {
     "fortune": "^5.5.0",
@@ -16,6 +16,8 @@
     "fortune-nedb": "^1.1.0"
   },
   "devDependencies": {
-    "eslint": "^7.4.0"
+    "eslint": "^7.4.0",
+    "kitsu": "^9.0.0",
+    "mocha": "^8.4.0"
   }
 }
