@@ -13,7 +13,7 @@
     "fortune": "^5.5.0",
     "fortune-http": "^1.2.0",
     "fortune-json-api": "^2.2.0",
-    "fortune-nedb": "^1.1.0"
+    "fortune-seedable-memory": "^1.0.0"
   },
   "devDependencies": {
     "eslint": "^7.4.0",
